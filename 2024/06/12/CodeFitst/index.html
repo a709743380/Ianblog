@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>.Net Framework EF_CodeFirst | Ianblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="使用環境 Visual Studio 20221.使用.Net FrameWork4.8.12.Nuget 安装 EntityFramework 6.4.4  確認安裝EntityFrameworkWeb.config &gt; configuration 出現entityFramework相關資訊Web.config設定  12345&lt;configuration&gt;  &lt;conf">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".Net Framework EF_CodeFirst">
+<meta property="og:url" content="https://a709743380.github.io/Ianblog/2024/06/12/CodeFitst/index.html">
+<meta property="og:site_name" content="Ianblog">
+<meta property="og:description" content="使用環境 Visual Studio 20221.使用.Net FrameWork4.8.12.Nuget 安装 EntityFramework 6.4.4  確認安裝EntityFrameworkWeb.config &gt; configuration 出現entityFramework相關資訊Web.config設定  12345&lt;configuration&gt;  &lt;conf">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-13T09:18:31.265Z">
+<meta property="article:author" content="Ian_H">
+<meta property="article:tag" content=".Net EF">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/Ianblog/atom.xml" title="Ianblog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/Ianblog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/Ianblog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/Ianblog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Ianblog/" id="logo">Ianblog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/Ianblog/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/Ianblog/">Home</a>
+        
+          <a class="main-nav-link" href="/Ianblog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/Ianblog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a709743380.github.io/Ianblog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-CodeFitst" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Ianblog/2024/06/12/CodeFitst/" class="article-date">
+  <time class="dt-published" datetime="2024-06-11T16:00:00.000Z" itemprop="datePublished">2024-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      .Net Framework EF_CodeFirst
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="使用環境-Visual-Studio-2022"><a href="#使用環境-Visual-Studio-2022" class="headerlink" title="使用環境 Visual Studio 2022"></a>使用環境 Visual Studio 2022</h2><h3 id="1-使用-Net-FrameWork4-8-1"><a href="#1-使用-Net-FrameWork4-8-1" class="headerlink" title="1.使用.Net FrameWork4.8.1"></a>1.使用.Net FrameWork4.8.1</h3><h3 id="2-Nuget-安装-EntityFramework-6-4-4"><a href="#2-Nuget-安装-EntityFramework-6-4-4" class="headerlink" title="2.Nuget 安装 EntityFramework 6.4.4"></a>2.Nuget 安装 EntityFramework 6.4.4</h3><hr />
+
+<h4 id="確認安裝EntityFramework"><a href="#確認安裝EntityFramework" class="headerlink" title="確認安裝EntityFramework"></a>確認安裝EntityFramework</h4><h4 id="Web-config-configuration-出現entityFramework相關資訊"><a href="#Web-config-configuration-出現entityFramework相關資訊" class="headerlink" title="Web.config &gt; configuration 出現entityFramework相關資訊"></a>Web.config &gt; configuration 出現entityFramework相關資訊</h4><h2><font color="red">Web.config設定</font></h2>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">configSections</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">&quot;entityFramework&quot;</span> <span class="attr">type</span>=<span class="string">&quot;System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot;</span> <span class="attr">requirePermission</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr />
+
+<h3 id="在configSections下方加入DB-connectionStrings用於連綫DB"><a href="#在configSections下方加入DB-connectionStrings用於連綫DB" class="headerlink" title="在configSections下方加入DB connectionStrings用於連綫DB"></a>在configSections下方加入DB connectionStrings用於連綫DB</h3><h5 id="這裡用Windows登錄"><a href="#這裡用Windows登錄" class="headerlink" title="(這裡用Windows登錄)"></a>(這裡用Windows登錄)</h5><h5 id="name-”MyDbContext”-連綫名稱"><a href="#name-”MyDbContext”-連綫名稱" class="headerlink" title="name&#x3D;”MyDbContext”  連綫名稱"></a>name&#x3D;”MyDbContext”  連綫名稱</h5><h5 id="connectionString-連續目標資訊字串"><a href="#connectionString-連續目標資訊字串" class="headerlink" title="connectionString: 連續目標資訊字串"></a>connectionString: 連續目標資訊字串</h5><h5 id="Data-Source-連綫主機-可能是ip-localhost-這裏使用本地SSMS"><a href="#Data-Source-連綫主機-可能是ip-localhost-這裏使用本地SSMS" class="headerlink" title="Data Source 連綫主機 (可能是ip &#x2F; localhost &#x2F; .) 這裏使用本地SSMS"></a>Data Source 連綫主機 (可能是ip &#x2F; localhost &#x2F; .) 這裏使用本地SSMS</h5><h5 id="Initial-Catalog-EF-CodeFirst-（使用的database名稱）"><a href="#Initial-Catalog-EF-CodeFirst-（使用的database名稱）" class="headerlink" title="Initial Catalog &#x3D; EF_CodeFirst （使用的database名稱）"></a>Initial Catalog &#x3D; EF_CodeFirst （使用的database名稱）</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">connectionStrings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">name</span>=<span class="string">&quot;MyDbContext&quot;</span> <span class="attr">connectionString</span>=<span class="string">&quot;Data Source=.;Initial Catalog=EF_CodeFirst;Integrated Security=True;&quot;</span> <span class="attr">providerName</span>=<span class="string">&quot;System.Data.SqlClient&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">connectionStrings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2><font color="red">以上完成Web.config設定</font></h2>
+<hr />
+
+<h2><font color="green">Models 建立</font></h2>
+
+<h4 id="因為是CodeFirst-所以要先建立好model"><a href="#因為是CodeFirst-所以要先建立好model" class="headerlink" title="因為是CodeFirst 所以要先建立好model"></a>因為是CodeFirst 所以要先建立好model</h4><h5 id="路徑：-Models-Post-cs-在Models下建立Post-cs檔案"><a href="#路徑：-Models-Post-cs-在Models下建立Post-cs檔案" class="headerlink" title="路徑：~&#x2F;Models&#x2F;Post.cs(在Models下建立Post.cs檔案)"></a>路徑：~&#x2F;Models&#x2F;Post.cs(在Models下建立Post.cs檔案)</h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//這是準備建在資料庫table的Model </span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Post</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> PostId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Title &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Content &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="建立和DbContext的關係"><a href="#建立和DbContext的關係" class="headerlink" title="建立和DbContext的關係"></a>建立和DbContext的關係</h4><h5 id="路徑：-Models-Post-cs-在Models下建立Post-cs檔案-1"><a href="#路徑：-Models-Post-cs-在Models下建立Post-cs檔案-1" class="headerlink" title="路徑：~&#x2F;Models&#x2F;Post.cs(在Models下建立Post.cs檔案)"></a>路徑：~&#x2F;Models&#x2F;Post.cs(在Models下建立Post.cs檔案)</h5><h5 id="要繼承-DbContext-（使用EF）"><a href="#要繼承-DbContext-（使用EF）" class="headerlink" title="要繼承 DbContext （使用EF）"></a>要繼承 DbContext （使用EF）</h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Data.Entity;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyDbContext</span> : <span class="title">DbContext</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//做base 對應到Web.config connectionStrings&gt;&gt;&lt;add name=&quot;MyDbContext&quot;.....</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyDbContext</span>() : <span class="title">base</span>(<span class="params"><span class="string">&quot;name=MyDbContext&quot;</span></span>)</span></span><br><span class="line">        &#123; &#125;</span><br><span class="line">        <span class="comment">//宣告</span></span><br><span class="line">        <span class="comment">//DbSet  表示與資料表建立關係</span></span><br><span class="line">        <span class="comment">//&lt;Post&gt; 使用此class内的欄位</span></span><br><span class="line">        <span class="comment">//Posts  名稱是Table名稱</span></span><br><span class="line">        <span class="keyword">public</span> DbSet&lt;Post&gt; Posts &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多個model-：-DbContext的關係只有一個-DbSet對應的model變多"><a href="#多個model-：-DbContext的關係只有一個-DbSet對應的model變多" class="headerlink" title="多個model ： DbContext的關係只有一個 DbSet對應的model變多"></a>多個model ： DbContext的關係只有一個 DbSet對應的model變多</h3><h2><font color="green">以上完成Models 建立</font></h2>
+<hr />
+
+<h2 id="InitialCreate"><font color="Purple">第一次建立語法建立Table</font></h2>
+
+<h5 id="執行環境：（Visual-Studio-2022上面那一排）-工具》》Nuget套件管理員》》套件管理員主控台"><a href="#執行環境：（Visual-Studio-2022上面那一排）-工具》》Nuget套件管理員》》套件管理員主控台" class="headerlink" title="執行環境：（Visual Studio 2022上面那一排） 工具》》Nuget套件管理員》》套件管理員主控台"></a>執行環境：（Visual Studio 2022上面那一排） 工具》》Nuget套件管理員》》套件管理員主控台</h5><h5 id="套件管理員主控台-快捷鍵-ALT-T-然後-N-然後-O"><a href="#套件管理員主控台-快捷鍵-ALT-T-然後-N-然後-O" class="headerlink" title="套件管理員主控台 快捷鍵 : ALT + T  然後 N 然後 O"></a>套件管理員主控台 快捷鍵 : ALT + T  然後 N 然後 O</h5><h4 id="1-Enable-migrations-建立Configuration"><a href="#1-Enable-migrations-建立Configuration" class="headerlink" title="1 Enable-migrations 建立Configuration"></a>1 Enable-migrations 建立Configuration</h4><h4 id="2-Add-Migration-InitialCreate-建立紀錄（跑完應該是可以刪掉的"><a href="#2-Add-Migration-InitialCreate-建立紀錄（跑完應該是可以刪掉的" class="headerlink" title="2 Add-Migration InitialCreate 建立紀錄（跑完應該是可以刪掉的"></a>2 Add-Migration InitialCreate 建立紀錄（跑完應該是可以刪掉的</h4><h4 id="3-Update-Database-實際同步到SQL"><a href="#3-Update-Database-實際同步到SQL" class="headerlink" title="3 Update-Database 實際同步到SQL"></a>3 Update-Database 實際同步到SQL</h4><h2 id="Enable-migrations-建立Configuration"><a href="#Enable-migrations-建立Configuration" class="headerlink" title="Enable-migrations 建立Configuration"></a>Enable-migrations 建立Configuration</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">執行 Enable-migrations 建立Configuration</span><br><span class="line">會在專案建立一個資料夾Migrations </span><br><span class="line">內有一個檔案Configuration.cs </span><br><span class="line"></span><br><span class="line">成功建立</span><br></pre></td></tr></table></figure>
+<h2 id="Add-Migration-InitialCreate"><a href="#Add-Migration-InitialCreate" class="headerlink" title="Add-Migration InitialCreate"></a>Add-Migration InitialCreate</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">執行 Add-Migration InitialCreate (記錄檔案名稱)</span><br><span class="line">會在資料夾Migrations 中建立一個檔案 檔案名稱： 時間格式 + _ + InitialCreate (記錄檔案名稱) + .cs</span><br><span class="line">裡面有建立的table資訊（欄位格式）</span><br><span class="line"></span><br><span class="line">成功建立</span><br></pre></td></tr></table></figure>
+
+<h2 id="Update-Database"><a href="#Update-Database" class="headerlink" title="Update-Database"></a>Update-Database</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">執行 Update-Database </span><br><span class="line">會根據此 Add-Migration InitialCreate 這時候的檔案資訊對資料庫做實際的更新 </span><br><span class="line">資料庫此時會建立一個EF_CodeFirst的database</span><br><span class="line">database名稱為Web.config 設定 Initial Catalog=EF_CodeFirst</span><br><span class="line">裡面會有你的model 還有一個更新記錄檔案</span><br><span class="line"></span><br><span class="line">成功建立</span><br></pre></td></tr></table></figure>
+
+<h2><font color="Purple">以上完成建立Table</font></h2>
+
+<hr />
+
+<h2><font color="blue">語法更新自己的Table</font></h2>
+
+<h4 id="修改model"><a href="#修改model" class="headerlink" title="修改model"></a>修改model</h4><h5 id="路徑：-Models-Post-cs"><a href="#路徑：-Models-Post-cs" class="headerlink" title="路徑：~&#x2F;Models&#x2F;Post.cs"></a>路徑：~&#x2F;Models&#x2F;Post.cs</h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Post</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> PostId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="comment">//修改欄位長度</span></span><br><span class="line">    [<span class="meta">MaxLength(50)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Title &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Content &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="加入model-UserInfo"><a href="#加入model-UserInfo" class="headerlink" title="加入model UserInfo"></a>加入model UserInfo</h4><h5 id="路徑：-Models-UserInfo-cs"><a href="#路徑：-Models-UserInfo-cs" class="headerlink" title="路徑：~&#x2F;Models&#x2F;UserInfo.cs"></a>路徑：~&#x2F;Models&#x2F;UserInfo.cs</h5><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">UserInfo</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Key</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> UserId &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">MaxLength(50)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> DateTime CreateDate &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125; = DateTime.Now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Migrations-檔案還在的時候"><a href="#Migrations-檔案還在的時候" class="headerlink" title="Migrations 檔案還在的時候"></a>Migrations 檔案還在的時候</h2><h5 id="執行環境：（Visual-Studio-2022上面那一排）-工具》》Nuget套件管理員》》套件管理員主控台-1"><a href="#執行環境：（Visual-Studio-2022上面那一排）-工具》》Nuget套件管理員》》套件管理員主控台-1" class="headerlink" title="執行環境：（Visual Studio 2022上面那一排） 工具》》Nuget套件管理員》》套件管理員主控台"></a>執行環境：（Visual Studio 2022上面那一排） 工具》》Nuget套件管理員》》套件管理員主控台</h5><h5 id="套件管理員主控台-快捷鍵-ALT-T-然後-N-然後-O-1"><a href="#套件管理員主控台-快捷鍵-ALT-T-然後-N-然後-O-1" class="headerlink" title="套件管理員主控台 快捷鍵 : ALT + T  然後 N 然後 O"></a>套件管理員主控台 快捷鍵 : ALT + T  然後 N 然後 O</h5><h3 id="Update-Database-AlterModel"><a href="#Update-Database-AlterModel" class="headerlink" title="Update-Database AlterModel"></a>Update-Database AlterModel</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">執行 Add-Migration AlterModel （AlterModel 像備註一樣給一個名稱）</span><br><span class="line">此時在Migrations資料夾下會建立一個 時間格式 + _ + AlterModel (記錄檔案名稱) + .cs 的檔案</span><br><span class="line">裡面有這次更新欄位的資訊</span><br><span class="line">成功執行</span><br></pre></td></tr></table></figure>
+<h3 id="Update-Database-更新資料"><a href="#Update-Database-更新資料" class="headerlink" title="Update-Database 更新資料"></a>Update-Database 更新資料</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Update-Database時要指定是哪個Migrations檔案 （get-help Update-Database 查看語法是什麼）</span><br><span class="line">執行 Update-Database -TargetMigration AlterModel 指定AlterModel</span><br><span class="line"></span><br><span class="line">成功執行</span><br><span class="line"></span><br><span class="line">檢查資料表</span><br><span class="line">多了table ：UserInfoes </span><br><span class="line">table :Posts title長度被限制到50了</span><br></pre></td></tr></table></figure>
+<h2 id="Migrations-檔案不在的時候"><a href="#Migrations-檔案不在的時候" class="headerlink" title="Migrations 檔案不在的時候"></a>Migrations 檔案不在的時候</h2><p><a href="#InitialCreate">回到第一次建立語法建立Table</a></p>
+<h2><font color="blue">以上完成更新Table</font></h2>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a709743380.github.io/Ianblog/2024/06/12/CodeFitst/" data-id="clxd326770000qw8vas7g76cu" data-title=".Net Framework EF_CodeFirst" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Ianblog/tags/Net-EF/" rel="tag">.Net EF</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Ianblog/2024/06/13/EF_DatabaseFirst/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          .Net Framework EF_DatabaseFirst
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Ianblog/tags/Net-EF/" rel="tag">.Net EF</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Ianblog/tags/Net-EF/" style="font-size: 10px;">.Net EF</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Ianblog/archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Ianblog/2024/06/13/EF_DatabaseFirst/">.Net Framework EF_DatabaseFirst</a>
+          </li>
+        
+          <li>
+            <a href="/Ianblog/2024/06/12/CodeFitst/">.Net Framework EF_CodeFirst</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Ian_H<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Ianblog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Ianblog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/Ianblog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/Ianblog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/Ianblog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

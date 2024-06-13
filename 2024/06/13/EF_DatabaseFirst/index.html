@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>.Net Framework EF_DatabaseFirst | Ianblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="使用環境 Visual Studio 20221.使用.Net FrameWork4.8.12.Nuget 安装 EntityFramework 6.4.4參考：https:&#x2F;&#x2F;learn.microsoft.com&#x2F;zh-tw&#x2F;ef&#x2F;ef6&#x2F;modeling&#x2F;designer&#x2F;workflows&#x2F;database-first使用工具建立 DatabaseFirst EF 設定EF環境  1.Da">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".Net Framework EF_DatabaseFirst">
+<meta property="og:url" content="https://a709743380.github.io/Ianblog/2024/06/13/EF_DatabaseFirst/index.html">
+<meta property="og:site_name" content="Ianblog">
+<meta property="og:description" content="使用環境 Visual Studio 20221.使用.Net FrameWork4.8.12.Nuget 安装 EntityFramework 6.4.4參考：https:&#x2F;&#x2F;learn.microsoft.com&#x2F;zh-tw&#x2F;ef&#x2F;ef6&#x2F;modeling&#x2F;designer&#x2F;workflows&#x2F;database-first使用工具建立 DatabaseFirst EF 設定EF環境  1.Da">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/add_project1.jpg">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/add_project2.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/add_project3.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/add_project4.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/addEF1.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/addEF2.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/addEF3.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/addEF4.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/addEF5.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/check1.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/check2.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/check3.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/import1.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/import2.png">
+<meta property="og:image" content="https://a709743380.github.io/Ianblog/images/import3.png">
+<meta property="article:published_time" content="2024-06-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-13T09:53:34.517Z">
+<meta property="article:author" content="Ian_H">
+<meta property="article:tag" content=".Net EF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a709743380.github.io/Ianblog/images/add_project1.jpg">
+  
+    <link rel="alternate" href="/Ianblog/atom.xml" title="Ianblog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/Ianblog/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/Ianblog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/Ianblog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Ianblog/" id="logo">Ianblog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/Ianblog/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/Ianblog/">Home</a>
+        
+          <a class="main-nav-link" href="/Ianblog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/Ianblog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://a709743380.github.io/Ianblog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-EF_DatabaseFirst" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Ianblog/2024/06/13/EF_DatabaseFirst/" class="article-date">
+  <time class="dt-published" datetime="2024-06-12T16:00:00.000Z" itemprop="datePublished">2024-06-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      .Net Framework EF_DatabaseFirst
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="使用環境-Visual-Studio-2022"><a href="#使用環境-Visual-Studio-2022" class="headerlink" title="使用環境 Visual Studio 2022"></a>使用環境 Visual Studio 2022</h2><h3 id="1-使用-Net-FrameWork4-8-1"><a href="#1-使用-Net-FrameWork4-8-1" class="headerlink" title="1.使用.Net FrameWork4.8.1"></a>1.使用.Net FrameWork4.8.1</h3><h3 id="2-Nuget-安装-EntityFramework-6-4-4"><a href="#2-Nuget-安装-EntityFramework-6-4-4" class="headerlink" title="2.Nuget 安装 EntityFramework 6.4.4"></a>2.Nuget 安装 EntityFramework 6.4.4</h3><h3 id="參考：https-learn-microsoft-com-zh-tw-ef-ef6-modeling-designer-workflows-database-first"><a href="#參考：https-learn-microsoft-com-zh-tw-ef-ef6-modeling-designer-workflows-database-first" class="headerlink" title="參考：https://learn.microsoft.com/zh-tw/ef/ef6/modeling/designer/workflows/database-first"></a>參考：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/ef/ef6/modeling/designer/workflows/database-first">https://learn.microsoft.com/zh-tw/ef/ef6/modeling/designer/workflows/database-first</a></h3><p>使用工具建立 DatabaseFirst EF</p>
+<h2><font color="red">設定EF環境</font></h2>
+
+<h3 id="1-DatabaseFirst-EF-相關内容放在一個類別庫從-WEB-端引入使用資料庫"><a href="#1-DatabaseFirst-EF-相關内容放在一個類別庫從-WEB-端引入使用資料庫" class="headerlink" title="1.DatabaseFirst EF 相關内容放在一個類別庫從 WEB 端引入使用資料庫"></a>1.DatabaseFirst EF 相關内容放在一個類別庫從 WEB 端引入使用資料庫</h3><h4 id="方案右鍵》加入》新增專案》類別庫（-Net-Framework）》下一步-這裏取名-DataBase"><a href="#方案右鍵》加入》新增專案》類別庫（-Net-Framework）》下一步-這裏取名-DataBase" class="headerlink" title="方案右鍵》加入》新增專案》類別庫（.Net Framework）》下一步 這裏取名 DataBase"></a>方案右鍵》加入》新增專案》類別庫（.Net Framework）》下一步 這裏取名 DataBase</h4><div style="display: flex;">
+    <img src="/Ianblog/images/add_project1.jpg" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/add_project2.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/add_project3.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/add_project4.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+</div>
+
+<h3 id="2-工具的方法建立模型"><a href="#2-工具的方法建立模型" class="headerlink" title="2.工具的方法建立模型"></a>2.工具的方法建立模型</h3><h4 id="DataBase-右鍵建立資料夾-DbContext》右鍵-DbContext》加入》新增項目》選擇”來則資料庫的-EF-Designer”》選擇你的目標-DataBase》在-App-config-建立-EF-DataBaseFirstEntities》選擇要建立的資料表模型使用預設命名》完成"><a href="#DataBase-右鍵建立資料夾-DbContext》右鍵-DbContext》加入》新增項目》選擇”來則資料庫的-EF-Designer”》選擇你的目標-DataBase》在-App-config-建立-EF-DataBaseFirstEntities》選擇要建立的資料表模型使用預設命名》完成" class="headerlink" title="DataBase 右鍵建立資料夾 DbContext》右鍵 DbContext》加入》新增項目》選擇”來則資料庫的 EF Designer”》選擇你的目標 DataBase》在 App.config 建立 EF_DataBaseFirstEntities》選擇要建立的資料表模型使用預設命名》完成"></a>DataBase 右鍵建立資料夾 DbContext》右鍵 DbContext》加入》新增項目》選擇”來則資料庫的 EF Designer”》選擇你的目標 DataBase》在 App.config 建立 EF_DataBaseFirstEntities》選擇要建立的資料表模型使用預設命名》完成</h4><div style="display: flex;">
+    <img src="/Ianblog/images/addEF1.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/addEF2.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/addEF3.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/addEF4.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/addEF5.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+</div>
+
+<h3 id="3-檢查檔案"><a href="#3-檢查檔案" class="headerlink" title="3.檢查檔案"></a>3.檢查檔案</h3><h5 id="1-路徑：DbContext-EF-DataBaseFirstEntities-Context-cs"><a href="#1-路徑：DbContext-EF-DataBaseFirstEntities-Context-cs" class="headerlink" title="1.路徑：DbContext\EF_DataBaseFirstEntities.Context.cs"></a>1.路徑：DbContext\EF_DataBaseFirstEntities.Context.cs</h5><h5 id="class-：EF-DataBaseFirstEntities-base-“name-EF-DataBaseFirstEntities”-name-對應到連線字串的-name"><a href="#class-：EF-DataBaseFirstEntities-base-“name-EF-DataBaseFirstEntities”-name-對應到連線字串的-name" class="headerlink" title="class ：EF_DataBaseFirstEntities base(“name&#x3D;EF_DataBaseFirstEntities”)name:對應到連線字串的 name"></a>class ：EF_DataBaseFirstEntities base(“name&#x3D;EF_DataBaseFirstEntities”)name:對應到連線字串的 name</h5><div style="display: flex;">
+    <img src="/Ianblog/images/check1.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+</div>
+
+<h5 id="2-App-config-內容為連線資訊要在-web-端的-web-config-使用"><a href="#2-App-config-內容為連線資訊要在-web-端的-web-config-使用" class="headerlink" title="2.App.config : 內容為連線資訊要在 web 端的 web.config 使用"></a>2.App.config : 內容為連線資訊要在 web 端的 web.config 使用</h5><h5 id="路徑：DataBase-App-Config"><a href="#路徑：DataBase-App-Config" class="headerlink" title="路徑：DataBase&#x2F;App.Config"></a>路徑：DataBase&#x2F;App.Config</h5><div style="display: flex;">
+    <img src="/Ianblog/images/check2.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+</div>
+
+<h5 id="3-DataBase-App-Config-連線資訊複製到-Web-端的-web-config"><a href="#3-DataBase-App-Config-連線資訊複製到-Web-端的-web-config" class="headerlink" title="3.DataBase&#x2F;App.Config 連線資訊複製到 Web 端的 web.config"></a>3.DataBase&#x2F;App.Config 連線資訊複製到 Web 端的 web.config</h5><h4><font color="red">因為使用Web端引入DataBase.dll 的方式 使用的連線字串是在Web端 不做這一步會找不到連線字串</font></h4>
+
+<div style="display: flex;">
+    <img src="/Ianblog/images/check3.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+   
+</div>
+
+<h3 id="4-在-Web-端安裝-Nuget-安装-EntityFramework-6-4-4"><a href="#4-在-Web-端安裝-Nuget-安装-EntityFramework-6-4-4" class="headerlink" title="4.在 Web 端安裝 Nuget 安装 EntityFramework 6.4.4"></a>4.在 Web 端安裝 Nuget 安装 EntityFramework 6.4.4</h3><h3 id="5-在-Web-端引入-DataBase-dll"><a href="#5-在-Web-端引入-DataBase-dll" class="headerlink" title="5.在 Web 端引入 DataBase.dll"></a>5.在 Web 端引入 DataBase.dll</h3><h5 id="EF-DataBaseFirst右鍵》加入》參考》DataBase打√-》確定"><a href="#EF-DataBaseFirst右鍵》加入》參考》DataBase打√-》確定" class="headerlink" title="EF_DataBaseFirst右鍵》加入》參考》DataBase打√ 》確定"></a>EF_DataBaseFirst右鍵》加入》參考》DataBase打√ 》確定</h5> <div style="display: flex;">
+    <img src="/Ianblog/images/import1.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/import2.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+    <img src="/Ianblog/images/import3.png" style="width: 50px; height: 50px;margin:0px 10px;" title="" alt="">
+</div>
+
+
+<h3 id="6-using-DataBase-DbContext-就可以直接使用了"><a href="#6-using-DataBase-DbContext-就可以直接使用了" class="headerlink" title="6.using DataBase.DbContext; 就可以直接使用了"></a>6.using DataBase.DbContext; 就可以直接使用了</h3><h2><font color="red">以上完成環境設定</font></h2>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a709743380.github.io/Ianblog/2024/06/13/EF_DatabaseFirst/" data-id="clxd3267e0001qw8va8xb3bl8" data-title=".Net Framework EF_DatabaseFirst" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Ianblog/tags/Net-EF/" rel="tag">.Net EF</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/Ianblog/2024/06/12/CodeFitst/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">.Net Framework EF_CodeFirst</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Ianblog/tags/Net-EF/" rel="tag">.Net EF</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Ianblog/tags/Net-EF/" style="font-size: 10px;">.Net EF</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Ianblog/archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Ianblog/2024/06/13/EF_DatabaseFirst/">.Net Framework EF_DatabaseFirst</a>
+          </li>
+        
+          <li>
+            <a href="/Ianblog/2024/06/12/CodeFitst/">.Net Framework EF_CodeFirst</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Ian_H<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Ianblog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Ianblog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/Ianblog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/Ianblog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/Ianblog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
