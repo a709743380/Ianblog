@@ -73,6 +73,207 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-AJAX" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Ianblog/2025/01/21/AJAX/" class="article-date">
+  <time class="dt-published" datetime="2025-01-20T16:00:00.000Z" itemprop="datePublished">2025-01-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/Ianblog/2025/01/21/AJAX/">Asynchronous JavaScript and XML</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="jQuery-AJAX-常用參數說明"><a href="#jQuery-AJAX-常用參數說明" class="headerlink" title="jQuery AJAX 常用參數說明"></a>jQuery AJAX 常用參數說明</h1><style>
+    .innerMargin details {
+        margin:3px 0px
+    }
+</style>
+<div class="innerMargin" style="font-size:1.2rem;text-align: justify;" >
+<details>
+  <summary>
+  url 要請求的 URL。
+  </summary>
+  
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span>: <span class="string">&quot;https://www.thef2e.com/api/tagList&quot;</span>,</span><br></pre></td></tr></table></figure>
+</details>
+
+<details>
+  <summary>
+    type HTTP 方法，常見的有 GET、POST 等，默認為 GET。
+  </summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">type</span>:<span class="string">&quot;GET&quot;</span>,</span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+  <summary>
+    method 與 type 等價，建議使用 method（因為與標準的 'fetch' 方法一致）。
+  </summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">method : <span class="string">&quot;POST&quot;</span></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+  <summary>data 傳遞到伺服器的資料，可以是物件或字串。 </summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="attr">data</span>: &#123; <span class="attr">name</span>: <span class="string">&#x27;John Doe&#x27;</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;, <span class="comment">//PSOT</span></span><br><span class="line"><span class="number">2.</span> <span class="attr">data</span>: <span class="string">&#x27;name=John Doe&amp;age=30&#x27;</span>,  <span class="comment">//GET</span></span><br><span class="line"><span class="number">3.</span> <span class="keyword">var</span> formData = <span class="keyword">new</span> <span class="title class_">FormData</span>();</span><br><span class="line">   formData.<span class="title function_">append</span>(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;John Doe&quot;</span>);</span><br><span class="line"></span><br><span class="line">   <span class="attr">data</span>: formData,</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+  <summary>dataType 預期的返回數據類型，例如 'json'、'xml'、'html' 或 'text'。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+  <summary>contentType 請求的內容類型（默認為 'application/x-www-form-urlencoded; charset=UTF-8'）。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> contentType : <span class="string">&#x27;application/x-www-form-urlencoded; charset=UTF-8&#x27;</span>,</span><br><span class="line"><span class="number">2.</span> contentType : <span class="string">&#x27;application/json&#x27;</span>, <span class="comment">// 請求的主體（data）包含的是 JSON 格式的數據</span></span><br><span class="line"><span class="number">3.</span> <span class="attr">contentType</span>: <span class="literal">false</span>, <span class="comment">// 禁用內容類型，通常與文件上傳一起使用</span></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+  <summary>async 是否以非同步方式發送請求（默認為 'true'）。</summary>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">async:true; //開啟非同步</span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+  <summary>
+    cache 是否對請求的結果進行快取（默認為 true）。
+  </summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cache : <span class="literal">true</span>,</span><br></pre></td></tr></table></figure>
+
+</details>
+                                
+<details>
+  <summary>headers 自訂 HTTP 標頭，例如：'{ 'Authorization': 'Bearer token' }'。</summary>
+  
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//適合標頭的設置是固定的，無需根據請求過程中的動態條件進行調整</span></span><br><span class="line"><span class="attr">headers</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;Authorization&#x27;</span>: <span class="string">&#x27;Bearer YOUR_TOKEN_HERE&#x27;</span>,  <span class="comment">// 自訂 Authorization 標頭</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+  <summary>timeout 設定請求的超時時間（以毫秒為單位）。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">timeout</span>: <span class="number">5000</span>,  <span class="comment">// 設定超時為 5000 毫秒（即 5 秒）</span></span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+  <summary>beforeSend  發送請求之前執行的回調函數（function），接受一個 'jqXHR'(XML HttpRequest) 對象作為參數。</summary>
+  
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">   1. 比直接在header寫的好處：可以根據條件動態地設置 Authorization 標頭，這對於需要根據不同情況設置標頭</span></span><br><span class="line"><span class="comment">   2. 可以將請求的設置邏輯抽象出來，保持代碼的靈活性。</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="attr">beforeSend</span>: <span class="keyword">function</span>(<span class="params">xhr</span>) &#123;</span><br><span class="line">       <span class="comment">// 在請求發送前，設置自訂標頭</span></span><br><span class="line">       xhr.<span class="title function_">setRequestHeader</span>(<span class="string">&#x27;Authorization&#x27;</span>, <span class="string">&#x27;Bearer YOUR_TOKEN&#x27;</span>);</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;請求發送前進行設置&#x27;</span>);</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+  <summary>complete 無論成功或失敗，都會執行的回調函數（function）。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//無論成功或者失敗都會執行到此程式</span></span><br><span class="line"><span class="attr">complete</span>: <span class="keyword">function</span>(<span class="params">xhr, status</span>) &#123;</span><br><span class="line">      <span class="comment">// 顯示請求結束的訊息</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;請求已完成，狀態:&#x27;</span>, status);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+<summary>success 請求成功時執行的回調函數（function），接收回應的數據、文字狀態以及 `jqXHR` 對象作為參數。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;請求成功:&#x27;</span>, response);</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+<summary>error 請求失敗時執行的回調函數（function），接收 `jqXHR` 對象、文字狀態和錯誤訊息作為參數。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">xhr, status, error</span>) &#123;</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;請求失敗:&#x27;</span>, error);</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+<summary>processData 是否將數據轉換為查詢字串（對於 'GET' 和 'POST' 默認為 'true'）。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123; <span class="attr">name</span>: <span class="string">&#x27;Alice&#x27;</span>, <span class="attr">age</span>: <span class="number">25</span> &#125;,</span><br><span class="line"><span class="attr">processData</span>: <span class="literal">true</span>, <span class="comment">// data 物件 (&#123; name: &#x27;Alice&#x27;, age: 25 &#125;) 會被轉換為查詢字串：?name=Alice&amp;age=25，並附加到 URL。</span></span><br></pre></td></tr></table></figure>
+
+</details>
+<details>
+<summary>crossDomain(Cross-Origin Requests) 是否允許跨域請求（通常自動判斷）。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//當 crossDomain 設置為 true 時，jQuery 會顯式告訴瀏覽器這是一個跨域請求。</span></span><br><span class="line"><span class="comment">//當 crossDomain 設置為 false（默認值）時，jQuery 會自動根據 URL 判斷是否為跨域請求。</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">crossDomain</span>: <span class="literal">true</span>,<span class="comment">// 顯式設置為 true，表明這是一個跨域請求</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</details>
+
+<details>
+<summary>xhrFields 用於設定 XMLHttpRequest 對象的屬性，例如'{ withCredentials: true }'。</summary>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">xhrFields</span>: &#123;</span><br><span class="line">        <span class="attr">withCredentials</span>: <span class="literal">true</span>  <span class="comment">// 設置為 true，表示攜帶憑證（如cookies）</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line"><span class="attr">xhrFields</span>: &#123;</span><br><span class="line">    <span class="attr">responseType</span>: <span class="string">&#x27;json&#x27;</span></span><br><span class="line">     &#125; <span class="comment">//覽器會自動解析返回的 JSON 數據，並將其轉換為 JavaScript 物件。這樣你就不需要手動解析 JSON.parse()，而是直接獲得一個物件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">xhrFields</span>: &#123; <span class="attr">responseType</span>: <span class="string">&#x27;json&#x27;</span> &#125; 是瀏覽器層級的設置，告訴瀏覽器如何處理數據。</span><br><span class="line"><span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span> 是 jQuery 層級的設置，告訴 jQuery 如何處理伺服器返回的數據。</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h1 id="使用-AJAX-範例"><a href="#使用-AJAX-範例" class="headerlink" title="使用 AJAX 範例"></a>使用 AJAX 範例</h1><h3 id="1-引入-Jquery"><a href="#1-引入-Jquery" class="headerlink" title="1.引入 Jquery"></a><strong>1.引入 Jquery</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://code.jquery.com/jquery-3.6.0.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+
+</div>
+
+<h3 id="簡單版本"><a href="#簡單版本" class="headerlink" title="簡單版本"></a>簡單版本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&quot;&quot;</span>, <span class="comment">//呼叫的URL</span></span><br><span class="line">  <span class="attr">method</span>: <span class="string">&quot;&quot;</span>, <span class="comment">//HTTP method</span></span><br><span class="line">  <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">response</span>) &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">error</span>: <span class="keyword">function</span> (<span class="params">xhr, status, error</span>) &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="beforeSend-complete-隱藏-顯示"><a href="#beforeSend-complete-隱藏-顯示" class="headerlink" title="beforeSend&#x2F;complete 隱藏&#x2F;顯示"></a>beforeSend&#x2F;complete 隱藏&#x2F;顯示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">  <span class="attr">url</span>: <span class="string">&#x27;api/test/fetchData&#x27;</span>,</span><br><span class="line">  <span class="attr">method</span>: <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">  <span class="attr">beforeSend</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 請求發送之前的處理，通常是顯示加載動畫</span></span><br><span class="line">    $(<span class="string">&#x27;#loading&#x27;</span>).<span class="title function_">show</span>(); <span class="comment">// 顯示加載動畫</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;成功響應:&#x27;</span>, response);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">xhr, status, error</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;錯誤:&#x27;</span>, error);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">complete</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 請求完成後的處理，無論成功或失敗都會觸發</span></span><br><span class="line">    $(<span class="string">&#x27;#loading&#x27;</span>).<span class="title function_">hide</span>(); <span class="comment">// 隱藏加載動畫</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="回傳後修改資料"><a href="#回傳後修改資料" class="headerlink" title="回傳後修改資料"></a>回傳後修改資料</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;button type=<span class="string">&quot;button&quot;</span> onclck=<span class="string">&quot;fetchData()&quot;</span> &gt;<span class="title class_">Click</span> <span class="title class_">Me</span> &lt;/button&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">label</span> <span class="attr">id</span>=<span class="string">&quot;testlable&quot;</span>&gt;</span>123<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;testinput&quot;</span> /&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;testlable&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&#x27;0&#x27;</span>&gt;</span>第0個<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">option</span> <span class="attr">select</span> <span class="attr">value</span>=<span class="string">&#x27;1&#x27;</span>&gt;</span>第1個<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">function</span> <span class="title function_">fetchData</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        $.<span class="title function_">ajax</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">url</span>: <span class="string">&#x27;api/test/fetchData&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">response</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="comment">//$(&#x27;#testlable&#x27;).text(&quot;新的內容&quot;);</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="comment">//$(&#x27;#testinput&#x27;).val(&quot;新的內容&quot;);</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="comment">//$(&quot;#testlable&quot;).val(&quot;1&quot;); 修改為1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">error</span>: <span class="keyword">function</span>(<span class="params">xhr, status, error</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;&#125;);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a709743380.github.io/Ianblog/2025/01/21/AJAX/" data-id="cm663toc30003o48v3p0704qv" data-title="Asynchronous JavaScript and XML" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Ianblog/tags/AJAX/" rel="tag">AJAX</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-AJAX copy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Ianblog/2025/01/21/AJAX%20copy/" class="article-date">
+  <time class="dt-published" datetime="2025-01-20T16:00:00.000Z" itemprop="datePublished">2025-01-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://a709743380.github.io/Ianblog/2025/01/21/AJAX%20copy/" data-id="cm663u2al0005o48v1u7vfrhh" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-EF_DatabaseFirst" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/Ianblog/2024/06/13/EF_DatabaseFirst/" class="article-date">
@@ -244,7 +445,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Ianblog/tags/Net-EF/" rel="tag">.Net EF</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Ianblog/tags/Net-EF/" rel="tag">.Net EF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Ianblog/tags/AJAX/" rel="tag">AJAX</a></li></ul>
     </div>
   </div>
 
@@ -254,7 +455,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/Ianblog/tags/Net-EF/" style="font-size: 10px;">.Net EF</a>
+      <a href="/Ianblog/tags/Net-EF/" style="font-size: 20px;">.Net EF</a> <a href="/Ianblog/tags/AJAX/" style="font-size: 10px;">AJAX</a>
     </div>
   </div>
 
@@ -263,7 +464,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Ianblog/archives/2024/06/">June 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Ianblog/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Ianblog/archives/2024/06/">June 2024</a></li></ul>
     </div>
   </div>
 
@@ -274,6 +475,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Ianblog/2025/01/21/AJAX/">Asynchronous JavaScript and XML</a>
+          </li>
+        
+          <li>
+            <a href="/Ianblog/2025/01/21/AJAX%20copy/">(no title)</a>
+          </li>
         
           <li>
             <a href="/Ianblog/2024/06/13/EF_DatabaseFirst/">.Net Framework EF_DatabaseFirst</a>
@@ -296,7 +505,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 Ian_H<br>
+      &copy; 2025 Ian_H<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
